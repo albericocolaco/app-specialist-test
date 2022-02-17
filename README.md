@@ -4,7 +4,7 @@ Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli
 
 ## Docker
 
-Execute `docker-compose -f "docker-compose.yml" up -d --build` para executar a aplicação em um container Docker.
+Execute `docker-compose -f "docker-compose.yml" up -d --build` para executar a aplicação em um container Docker. Acessar a URL `http://localhost:4201/`
 
 ## Development server
 
