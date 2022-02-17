@@ -1,0 +1,23 @@
+<mat-grid-list cols="1" rowHeight="20:1">
+    <mat-grid-tile>
+        <h2>Login</h2>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Usuário</mat-label>
+                <input matInput id="username" type="text" formControlName="username">
+            </mat-form-field>
+        
+        
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input matInput id="password" type="password" formControlName="password">
+            </mat-form-field>
+        </form>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <button mat-raised-button color="primary" (click)="onSubmit()">Entrar</button>
+    </mat-grid-tile>
+  </mat-grid-list>

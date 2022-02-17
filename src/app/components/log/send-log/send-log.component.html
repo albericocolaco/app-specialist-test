@@ -1,0 +1,56 @@
+<a mat-button href="/logs/view">Ver maiores despesas por Operadora</a>
+<mat-grid-list cols="1" rowHeight="20:1">
+    <mat-grid-tile>
+        <h2>Enviar Log</h2>
+    </mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="1" rowHeight="3:1">
+    <mat-grid-tile>
+        <form [formGroup]="sendLogForm" (ngSubmit)="onSubmit()">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Bandeira do Cartão</mat-label>
+                            <select matNativeControl required id="flag" formControlName="flag">
+                                <option value="volvo" *ngFor="let enum of cardsFlag | keyvalue" [value]="enum.key">{{ enum.key }}</option>
+                            </select>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Data da transação</mat-label>
+                            <input matInput required [matDatepicker]="picker" id="transactionAt" formControlName="transactionAt">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Cliente</mat-label>
+                            <input matInput required id="client" type="text" formControlName="client">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Valor</mat-label>
+                            <input matInput required id="value" type="number" formControlName="value">
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button mat-raised-button color="primary">Entrar</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </mat-grid-tile>
+</mat-grid-list>
